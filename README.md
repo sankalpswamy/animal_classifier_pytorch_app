@@ -1,4 +1,4 @@
-# Animal Classifier - Option A (PyTorch)
+# Animal Classifier
 
 This version is compatible with environments where TensorFlow is not available, including newer Python installations.
 
