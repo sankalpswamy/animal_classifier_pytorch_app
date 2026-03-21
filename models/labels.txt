@@ -1,0 +1,15 @@
+antelope
+bat
+bear
+bee
+beetle
+bison
+boar
+butterfly
+camel
+capybara
+cat
+dog
+elephant
+fox
+zebra

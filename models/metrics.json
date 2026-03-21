@@ -1,0 +1,168 @@
+{
+  "trial": 1,
+  "val_loss": 0.5377756696769169,
+  "val_accuracy": 0.9497142857142857,
+  "test_loss": 0.5130765174561002,
+  "test_accuracy": 0.9534619750283768,
+  "generated_test_loss": 0.5169620396533429,
+  "generated_test_accuracy": 0.9534619750283768,
+  "classes": [
+    "antelope",
+    "bat",
+    "bear",
+    "bee",
+    "beetle",
+    "bison",
+    "boar",
+    "butterfly",
+    "camel",
+    "capybara",
+    "cat",
+    "dog",
+    "elephant",
+    "fox",
+    "zebra"
+  ],
+  "history": {
+    "stage1": {
+      "train_loss": [
+        1.1328313466758158,
+        0.7763835209708955,
+        0.743136826042805,
+        0.6921218576927176,
+        0.6717191174944329,
+        0.6631948524811468
+      ],
+      "train_accuracy": [
+        0.7596271768457199,
+        0.859700760363012,
+        0.8658327201373559,
+        0.8827569291145451,
+        0.895756683836154,
+        0.8952661270542065
+      ],
+      "val_loss": [
+        0.6721491479192462,
+        0.6671584058148521,
+        0.6342152510711125,
+        0.591334347145898,
+        0.592174862589155,
+        0.5907529034955161
+      ],
+      "val_accuracy": [
+        0.9131428571428571,
+        0.8994285714285715,
+        0.9165714285714286,
+        0.9257142857142857,
+        0.9291428571428572,
+        0.9257142857142857
+      ]
+    },
+    "stage2": {
+      "train_loss": [
+        0.6257532649336126,
+        0.5858807996087195,
+        0.5570350733930819,
+        0.5379219149619245,
+        0.5160069091810676,
+        0.5025027968119194
+      ],
+      "train_accuracy": [
+        0.9090017169487368,
+        0.9281334314446897,
+        0.9372087319107186,
+        0.9460387539857739,
+        0.9492273730684326,
+        0.9536423841059603
+      ],
+      "val_loss": [
+        0.5644835047381265,
+        0.5444468880721501,
+        0.5394164365359715,
+        0.5410724273068565,
+        0.5377756696769169,
+        0.525880133492606
+      ],
+      "val_accuracy": [
+        0.9325714285714286,
+        0.9417142857142857,
+        0.9405714285714286,
+        0.9428571428571428,
+        0.9497142857142857,
+        0.9497142857142857
+      ]
+    }
+  },
+  "config": {
+    "project": {
+      "name": "animal_classifier_option_a_pytorch",
+      "selected_classes": [
+        "antelope",
+        "bat",
+        "bear",
+        "bee",
+        "beetle",
+        "bison",
+        "boar",
+        "butterfly",
+        "camel",
+        "capybara",
+        "cat",
+        "dog",
+        "elephant",
+        "fox",
+        "zebra"
+      ]
+    },
+    "data": {
+      "raw_dir": "data/raw",
+      "train_dir": "data/train",
+      "val_dir": "data/val",
+      "test_dir": "data/test",
+      "supported_extensions": [
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".bmp",
+        ".webp"
+      ],
+      "train_split": 0.7,
+      "val_split": 0.15,
+      "test_split": 0.15,
+      "image_size": 224,
+      "batch_size": 16,
+      "num_workers": 0
+    },
+    "training": {
+      "seed": 42,
+      "trials": 3,
+      "epochs_stage1": 6,
+      "epochs_stage2": 6,
+      "learning_rate_stage1": 0.001,
+      "learning_rate_stage2": 0.0001,
+      "early_stopping_patience": 3,
+      "target_accuracy": 0.85,
+      "generated_test_samples_per_image": 1
+    },
+    "model": {
+      "backbone": "efficientnet_b0",
+      "dropout_rate": 0.3,
+      "dense_units": 256,
+      "label_smoothing": 0.05,
+      "unfreeze_last_blocks": 2
+    },
+    "augmentation": {
+      "horizontal_flip": true,
+      "rotation_degrees": 15,
+      "random_resized_crop_scale_min": 0.85,
+      "color_jitter_brightness": 0.2,
+      "color_jitter_contrast": 0.2,
+      "color_jitter_saturation": 0.2
+    },
+    "output": {
+      "model_path": "models/best_model.pt",
+      "labels_path": "models/labels.txt",
+      "metrics_path": "models/metrics.json"
+    }
+  }
+}
