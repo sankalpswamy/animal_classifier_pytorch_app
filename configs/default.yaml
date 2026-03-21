@@ -1,0 +1,62 @@
+project:
+  name: animal_classifier_option_a_pytorch
+  selected_classes:
+    - antelope
+    - bat
+    - bear
+    - bee
+    - beetle
+    - bison
+    - boar
+    - butterfly
+    - camel
+    - capybara
+    - cat
+    - dog
+    - elephant
+    - fox
+    - zebra
+
+data:
+  raw_dir: data/raw
+  train_dir: data/train
+  val_dir: data/val
+  test_dir: data/test
+  supported_extensions: [".jpg", ".jpeg", ".png", ".bmp", ".webp"]
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+  image_size: 224
+  batch_size: 16
+  num_workers: 0
+
+training:
+  seed: 42
+  trials: 3
+  epochs_stage1: 6
+  epochs_stage2: 6
+  learning_rate_stage1: 0.001
+  learning_rate_stage2: 0.0001
+  early_stopping_patience: 3
+  target_accuracy: 0.85
+  generated_test_samples_per_image: 1
+
+model:
+  backbone: efficientnet_b0
+  dropout_rate: 0.3
+  dense_units: 256
+  label_smoothing: 0.05
+  unfreeze_last_blocks: 2
+
+augmentation:
+  horizontal_flip: true
+  rotation_degrees: 15
+  random_resized_crop_scale_min: 0.85
+  color_jitter_brightness: 0.2
+  color_jitter_contrast: 0.2
+  color_jitter_saturation: 0.2
+
+output:
+  model_path: models/best_model.pt
+  labels_path: models/labels.txt
+  metrics_path: models/metrics.json

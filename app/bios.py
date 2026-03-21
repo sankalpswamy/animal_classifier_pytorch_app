@@ -1,0 +1,17 @@
+DEFAULT_BIOS = {
+    "antelope": "Antelopes are fast, graceful herbivores known for their speed and agility.",
+    "bat": "Bats are the only mammals capable of true flight and often use echolocation.",
+    "bear": "Bears are powerful mammals with strong senses and varied diets.",
+    "bee": "Bees are pollinators that play a critical role in ecosystems and agriculture.",
+    "beetle": "Beetles are one of the most diverse insect groups on Earth.",
+    "bison": "Bison are large grazing mammals once widespread across North America.",
+    "boar": "Boars are wild pigs known for toughness and adaptability.",
+    "butterfly": "Butterflies are insects with colorful wings and a remarkable life cycle.",
+    "camel": "Camels are desert-adapted mammals famous for endurance and water conservation.",
+    "capybara": "Capybaras are the world's largest rodents and are highly social.",
+    "cat": "Cats are agile predators and one of the most popular household pets.",
+    "dog": "Dogs are domesticated companions known for loyalty and trainability.",
+    "elephant": "Elephants are intelligent, social mammals with trunks and strong family bonds.",
+    "fox": "Foxes are clever canids with sharp senses and adaptable behavior.",
+    "zebra": "Zebras are African equines recognized by their distinctive striped coats.",
+}
