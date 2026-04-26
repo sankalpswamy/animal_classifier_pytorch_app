@@ -1,7 +1,8 @@
 project:
-  name: animal_classifier_option_a_pytorch
+  name: animal_classifier_100_animals_pytorch
   selected_classes:
     - antelope
+    - badger
     - bat
     - bear
     - bee
@@ -12,9 +13,93 @@ project:
     - camel
     - capybara
     - cat
+    - caterpillar
+    - chimpanzee
+    - cockroach
+    - cow
+    - coyote
+    - crab
+    - crocodile
+    - crow
+    - deer
     - dog
+    - dolphin
+    - donkey
+    - dragonfly
+    - duck
+    - eagle
     - elephant
+    - flamingo
+    - fly
     - fox
+    - frog
+    - giraffe
+    - goat
+    - goldfish
+    - goose
+    - gorilla
+    - grasshopper
+    - hamster
+    - hare
+    - hedgehog
+    - hippopotamus
+    - hornbill
+    - horse
+    - hummingbird
+    - hyena
+    - jellyfish
+    - kangaroo
+    - koala
+    - ladybugs
+    - leopard
+    - lion
+    - lizard
+    - lobster
+    - mandrill
+    - mantis
+    - mosquito
+    - moth
+    - mouse
+    - octopus
+    - orangutan
+    - otter
+    - owl
+    - panda
+    - pangolin
+    - parrot
+    - peacock
+    - pelecaniformes
+    - penguin
+    - pig
+    - pigeon
+    - platypus
+    - porcupine
+    - possum
+    - pufferfish
+    - raccoon
+    - reindeer
+    - rhinoceros
+    - sandpiper
+    - scallop
+    - scorpion
+    - seahorse
+    - seal
+    - shark
+    - sheep
+    - snake
+    - sparrow
+    - spider
+    - squid
+    - squirrel
+    - starfish
+    - swan
+    - tiger
+    - turkey
+    - turtle
+    - walrus
+    - whale
+    - wombat
+    - woodpecker
     - zebra
 
 data:
@@ -33,28 +118,28 @@ data:
 training:
   seed: 42
   trials: 3
-  epochs_stage1: 6
-  epochs_stage2: 6
+  epochs_stage1: 8
+  epochs_stage2: 10
   learning_rate_stage1: 0.001
   learning_rate_stage2: 0.0001
-  early_stopping_patience: 3
+  early_stopping_patience: 4
   target_accuracy: 0.85
   generated_test_samples_per_image: 1
 
 model:
   backbone: efficientnet_b0
-  dropout_rate: 0.3
+  dropout_rate: 0.4
   dense_units: 256
-  label_smoothing: 0.05
-  unfreeze_last_blocks: 2
+  label_smoothing: 0.1
+  unfreeze_last_blocks: 3
 
 augmentation:
   horizontal_flip: true
-  rotation_degrees: 15
-  random_resized_crop_scale_min: 0.85
-  color_jitter_brightness: 0.2
-  color_jitter_contrast: 0.2
-  color_jitter_saturation: 0.2
+  rotation_degrees: 20
+  random_resized_crop_scale_min: 0.8
+  color_jitter_brightness: 0.25
+  color_jitter_contrast: 0.25
+  color_jitter_saturation: 0.25
 
 output:
   model_path: models/best_model.pt
